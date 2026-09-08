@@ -4,8 +4,8 @@
 // Фактическое начисление генераций происходит в handlers/message.js,
 // в обработчике successful_payment, после реального списания Stars.
 
-import { api } from 'sdk';
-import { CONFIG } from 'lib/config';
+import { tg } from '../lib/telegram.js';
+import { CONFIG } from '../lib/config.js';
 
 export default async function (preCheckoutQuery) {
   const packageId = preCheckoutQuery.invoice_payload;
