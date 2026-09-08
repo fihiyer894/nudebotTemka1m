@@ -1,0 +1,17 @@
+{
+  "name": "ai-fashion-preview-bot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Telegram AI Fashion Preview Bot on Telegram Serverless (tgcloud)",
+  "scripts": {
+    "push": "tgcloud push",
+    "migrate": "tgcloud migrate",
+    "status": "tgcloud status",
+    "diff": "tgcloud diff",
+    "run": "tgcloud run"
+  },
+  "devDependencies": {
+    "@tgcloud/cli": "latest"
+  }
+}
