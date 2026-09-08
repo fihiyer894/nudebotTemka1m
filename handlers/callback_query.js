@@ -3,8 +3,7 @@
 // генерации: резервирование баланса -> запрос к Replicate с анимацией
 // прогресса -> отправка результата или возврат генерации при ошибке.
 
-import { api, BotApiError } from 'sdk';
-import { CONFIG } from 'lib/config';
+import { CONFIG } from '../lib/config.js';
 import {
   getOrCreateUser,
   getPendingPhoto,
@@ -14,8 +13,8 @@ import {
   completeGenerationRecord,
   logGenerationEvent,
   getRecentPurchases,
-} from 'lib/db';
-import { safeEditMessageText, downloadPhotoAsDataUri, sendPhotoByUrl } from 'lib/telegram';
+} from '../lib/db.js';
+import { safeEditMessageText, downloadPhotoAsDataUri, sendPhotoByUrl } from '../lib/telegram.js';
 import {
   mainMenuText,
   mainMenuKeyboard,
@@ -28,9 +27,8 @@ import {
   purchasesText,
   backToMainKeyboard,
   progressText,
-} from 'lib/helpers';
-import { generateFashionPreview, GenerationError } from 'lib/replicate';
-
+} from '../lib/helpers.js';
+import { generateFashionPreview, GenerationError } from '../lib/replicate.js';
 export default async function (callbackQuery) {
   const data = callbackQuery.data || '';
   const chatId = callbackQuery.message.chat.id;
