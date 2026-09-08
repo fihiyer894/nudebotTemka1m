@@ -15,3 +15,11 @@
     "@tgcloud/cli": "latest"
   }
 }
+{
+  "name": "tg-ai-fashion-preview-bot",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
