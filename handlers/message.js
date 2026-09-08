@@ -71,7 +71,6 @@ async function handlePhoto(message, user) {
     {
       inline_keyboard: [
         [{ text: '👗 Женская коллекция', callback_data: 'cat:women' }],
-        [{ text: '👔 Мужская коллекция', callback_data: 'cat:men' }],
         [{ text: '‹ Главное меню', callback_data: 'menu:main' }],
       ],
     }
