@@ -4,9 +4,23 @@
 // СТРОГО после подтверждённой оплаты и через идемпотентный creditPayment().
 
 import { tg } from '../lib/telegram.js';
-import { getUser, setPendingPhoto, processPayment } from '../lib/db.js';
-import { getMainMenu, getAdminStats } from '../lib/helpers.js';
+import { 
+  getOrCreateUser, 
+  setPendingPhoto, 
+  creditPayment, 
+  getAdminStats 
+} from '../lib/db.js';
+import { 
+  mainMenuText, 
+  mainMenuKeyboard, 
+  adminStatsText, 
+  backToMainKeyboard 
+} from '../lib/helpers.js';
 import { CONFIG } from '../lib/config.js';
+
+async function sendMessage(chatId, text, extra = {}) {
+  return tg.sendMessage(chatId, text, extra);
+}
 
 export default async function (message) {
   const user = await getOrCreateUser(message.from);
